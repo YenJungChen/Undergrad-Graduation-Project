@@ -1,0 +1,63 @@
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" charset="utf-8"/>
+	<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet">
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript">
+	var map
+	var image = 'mark.png';
+	var geocoder;
+	var sv;
+	var mymark;
+	function initialize() {
+		sv = new google.maps.StreetViewService();
+		geocoder =new google.maps.Geocoder();
+		var mapOptions = {
+		    zoom: 14,      
+		    center: new google.maps.LatLng(22.732163, 120.284400), 
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		
+		map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+		
+	}   	 
+ 
+ 
+ 
+	function codeAddress(address){    
+		geocoder.geocode({'address': address },function(results, status){      
+			if(status == google.maps.GeocoderStatus.OK){  			
+			    sv.getPanoramaByLocation(results[0].geometry.location, 50, function(data, Status) {			
+					if (Status == google.maps.StreetViewStatus.OK) {
+						map.setCenter(results[0].geometry.location);        
+						var marker =new google.maps.Marker({            
+							map: map,            
+							position: results[0].geometry.location
+						});      
+					}else{
+						JSP.showToast('no streetview');			
+					}
+				});				
+			}
+			else{        
+				JSP.showToast('no location');	    
+			}    
+		});  
+	}
+	function getClass(javaClassName) {
+	   try {
+	      var theClass = java.lang.Class.forName(PreViewActivity);
+	   } catch (e) {
+	      return ("The Java exception is " + e);
+	   }
+	   return theClass
+	}	
+	</script>
+</head>
+<body onload="initialize()">
+	<!-- ­×§ïheight¬°100% --!>
+	<div id="map_canvas" style="width: device-width; height: 100%;"></div>
+	<!-- ************** --!>
+</body>
+</html>
+

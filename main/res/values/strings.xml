@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">OtakuBiker</string>
+    <string name="welcome"></string>
+    <string name="hello_world">Hello world!</string>
+    <string name="user">使用者</string>
+    <string name="play">預設路線</string>
+    <string name="view">直接開始</string>
+    <string name="tutor">教學</string>
+    <string name="about">關於我們</string>
+	<string name="preview">起點</string>
+	<string name="aboutinfo">關於我們\n\n相關開發人員及應用程式簡介</string>
+	<string name="viewinfo">直接開始\n\n提供使用者直接輸入起程點，\n無任何限制，可以四處騎行，\n當要離開程序時則按下[結束遊戲]，\n結算該次里程數、時間及卡路里。</string>
+	<string name="playinfo">推薦景點\n\n提供預設觀光路線，\n能隨機跑出地圖，\n在不需要設定路線下，\n直接上路，是個方便的選擇。</string>
+	<string name="userinfo">使用者\n\n提供個人資料的輸入，\n包括使用者暱稱、身高、體重，\n以及其他資料的檢視，\n包括本次運動里程數、時間、消耗卡路里。</string>
+</resources>

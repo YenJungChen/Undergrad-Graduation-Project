@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/rainbow"
+    android:padding="5dp" >
+    <Button
+        android:id="@+id/ice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200px"
+        android:background="@+drawable/ice" />
+     <Button
+        android:id="@+id/gold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400px"
+        android:background="@+drawable/gold" />
+     <Button
+        android:id="@+id/small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="600px"
+        android:background="@+drawable/small"/>
+ 	<RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="25px"
+        android:layout_marginRight="20px"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="#00000000" >
+		<Button
+            android:id="@+id/backmenu"
+            android:layout_width="300px"
+	        android:layout_height="140px"
+           	android:layout_alignParentBottom="true"
+           	android:layout_marginBottom="20px"
+           	android:layout_alignParentRight="true"
+           	android:layout_marginRight="20px"
+            android:text="回選單"  
+            android:textSize="70px"
+            android:background="@+drawable/btn_bg_br2_t" />
+	</RelativeLayout>
+</RelativeLayout>

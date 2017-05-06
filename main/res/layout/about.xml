@@ -1,0 +1,75 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@layout/about"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tire" >
+ 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="right"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="80px"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="40px">
+            
+			<TextView
+			    android:id="@+id/staff1"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:gravity="right"
+			    android:layout_alignParentTop="true"
+			    android:layout_alignParentRight="true"
+			    android:text="Otaku Rider\n"
+			    android:textColor="@android:color/black"
+			    android:textSize="70px"
+			    android:textStyle="bold" />
+			
+           	<TextView
+			    android:id="@+id/staff"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:gravity="right|center_vertical"
+			    android:layout_alignParentTop="true"
+			    android:layout_alignParentRight="true"
+			    android:text="\n\n開發人員\n陳彥蓉  賴暳陵 王孟穎 吳秦至秦\n"
+			    android:textColor="@android:color/black"
+			    android:textSize="50px" />
+
+            <TextView
+                android:id="@+id/intro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="right"
+                android:text="\n簡介 \n\n本APP結合三種地圖\n一般地圖、導航和街景模式\n是一套能讓使用者在家\n就能環遊世界的應用程式\n\n騎著單車、放上平板\n馬上有置身在當地騎乘的感覺"
+                android:textColor="@android:color/black"
+                android:textSize="45px" 
+                android:layout_centerVertical="true" />                 
+            
+        </RelativeLayout>
+
+ 		<RelativeLayout
+ 		    android:layout_width="wrap_content"
+ 		    android:layout_height="wrap_content"
+ 		    android:layout_alignParentRight="true"
+ 		    android:layout_alignParentBottom="true" 
+ 		    android:layout_marginBottom="20px"
+	        android:layout_marginRight="20px" >
+
+ 		    <Button
+ 		        android:id="@+id/backmenu"
+ 		        android:layout_width="300px"
+ 		        android:layout_height="140px"
+ 		        android:layout_alignParentBottom="true"
+ 		        android:layout_alignParentRight="true"
+ 		        android:layout_marginBottom="20px"
+ 		        android:layout_marginRight="20px"
+ 		        android:background="@+drawable/btn_bg_br2_t"
+ 		        android:text="回選單"
+ 		        android:textSize="70px" />
+ 		</RelativeLayout>
+ 
+</RelativeLayout>

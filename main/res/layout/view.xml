@@ -1,0 +1,134 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent" />
+    
+   <RelativeLayout
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true" >
+		<!-- 增加relativeLayout 將按鈕群組，並靠右垂直排列 -->
+       	<RelativeLayout
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent"
+           android:layout_alignParentRight="true"
+           android:layout_marginRight="20px"
+           android:layout_marginTop="20px"
+           android:background="#00000000"
+           android:gravity="right"
+           android:orientation="vertical" >
+	        
+	        <Button
+	            android:id="@+id/forward"
+	            android:layout_width="210px"
+	            android:layout_height="110px"
+	            android:layout_alignParentTop="true"
+	            android:layout_alignParentRight="true"
+	            android:text="前進"
+	            android:textSize="70px" 
+	            android:background="@+drawable/btn_bg_b2_t" />
+	        
+	        <Button
+	            android:id="@+id/turnback"
+	            android:layout_width="210px"
+	            android:layout_height="110px"
+	            android:layout_below="@+id/forward"
+	            android:layout_alignParentRight="true"
+	            android:layout_marginTop="20px"
+	            android:text="後退"
+	            android:textSize="70px"
+	            android:background="@+drawable/btn_bg_b2_t" />
+	
+	        <Button
+	            android:id="@+id/backmenu"
+	            android:layout_width="320px"
+	            android:layout_height="160px"
+	            android:layout_alignParentBottom="true"
+	            android:layout_alignParentRight="true"
+	            android:layout_alignParentEnd="true"
+	            android:layout_marginBottom="20px"
+	            android:background="@+drawable/btn_bg_br2_t"
+	            android:text="退出遊戲"
+	            android:textSize="70px" />
+
+	    </RelativeLayout>
+        <!-- ********************************* -->
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginTop="20px"
+            android:background="#000000"
+            android:orientation="vertical" >
+            
+            <RelativeLayout
+                android:id="@+id/AboveRelative"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal">
+            
+		        <TextView
+		            android:id="@+id/textView1"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_alignParentLeft="true"
+		            android:textSize="70px"
+		            android:layout_centerVertical="true"
+		            android:text="藍芽訊號"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		        
+		        <TextView
+		            android:id="@+id/bluetooth"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_marginLeft="140px"
+		            android:layout_marginStart="140px"
+		            android:layout_toRightOf="@+id/textView1"
+		            android:layout_centerVertical="true"
+		            android:text="signal"
+		            android:textSize="70px"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+        	</RelativeLayout>
+
+            <RelativeLayout
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:orientation="horizontal"
+	            android:layout_below="@+id/AboveRelative" >
+		        
+		        <TextView
+		            android:id="@+id/textView2"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_alignParentLeft="true"
+		            android:layout_centerVertical="true"
+		            android:textSize="70px"
+		            android:text="預估卡路里"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		        
+		        <!-- 修改text為calorie -->
+		        <TextView
+		            android:id="@+id/calorie"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"		            
+		            android:textSize="70px"
+		            android:layout_toRightOf="@+id/textView2"
+		            android:layout_marginLeft="70px"
+		            android:layout_centerVertical="true"
+		            android:text="calorie"
+		            android:textAppearance="?android:attr/textAppearanceSmall" />
+		        <!-- **************** -->
+		        
+        	</RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

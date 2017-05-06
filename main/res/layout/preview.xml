@@ -1,0 +1,106 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true" >
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent" />
+    
+    <!-- 上方搜尋方塊及按鈕列 -->
+	<RelativeLayout
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10px"
+        android:layout_marginLeft="10px"
+        android:layout_marginRight="10px"
+        android:layout_marginBottom="10px"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="#00000000" 
+        android:orientation="horizontal">
+        
+	    <!-- 左方文字及搜尋方塊 -->
+	    <RelativeLayout
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:focusable="true"
+	        android:focusableInTouchMode="true"
+	        android:background="#000000" >
+			<TextView
+	            android:id="@+id/textView1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_centerVertical="true"
+	            android:layout_alignParentLeft="true"
+            	android:layout_marginLeft="20px"
+	            android:textSize="54px"
+	            android:text="@string/preview"
+	            android:textColor="#FFFFFF"/>
+			
+	        <EditText
+	            android:id="@+id/From"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_alignParentTop="true"
+	            android:layout_marginTop="20px"
+	            android:layout_marginBottom="14px"
+            	android:layout_marginLeft="10px"
+	            android:layout_toRightOf="@+id/textView1"
+	            android:clickable="false"
+	            android:ems="17"
+	            android:inputType="text"
+	            android:text="綠島鄉公所"
+	            android:textSize="56px" />  
+			<Button
+	            android:id="@+id/btnSubmit"
+	            android:layout_width="210px"
+		        android:layout_height="110px"
+	            android:layout_toLeftOf="@+id/gostart"
+	            android:layout_marginRight="15px"
+	            android:text="尋找" 
+	            android:textSize="65px"
+	            android:background="@+drawable/btn_bg_b2"
+	            android:layout_centerVertical="true"/>
+	        
+	        <Button
+	            android:id="@+id/gostart"
+	            android:layout_width="210px"
+		        android:layout_height="110px"
+		        android:layout_alignParentRight="true"
+				android:layout_marginRight="25px"
+	            android:text="開始"  
+	            android:textSize="65px"
+	            android:background="@+drawable/btn_bg_b2"
+	            android:layout_centerVertical="true" />	
+		</RelativeLayout>
+		
+		<!-- 右方按鈕列  -->
+	    <RelativeLayout
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_alignParentBottom="true"
+	        android:layout_marginRight="20px"
+	        android:focusable="true"
+	        android:focusableInTouchMode="true"
+	        android:background="#00000000">
+	        
+	        <Button
+	            android:id="@+id/turnback"
+	            android:layout_width="300px"
+		        android:layout_height="140px"
+            	android:layout_alignParentBottom="true"
+            	android:layout_marginBottom="40px"
+            	android:layout_alignParentRight="true"
+	            android:text="回選單"  
+	            android:textSize="70px"
+	            android:background="@+drawable/btn_bg_br2_t"/>
+	        
+	    </RelativeLayout>
+	</RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,121 @@
+<html>
+<head>
+	<meta name="view" content="initial-scale=1.0, user-scalable=no" charset="utf-8"/>
+	<link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet">
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+	<style type="text/css">
+		#map-canvas { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+    </style>
+	<script type="text/javascript">
+	var map;
+	var mapOptions;
+	var cafe = new google.maps.LatLng(22.721390, 120.281166);
+	var links=[];
+	var selectroad=[];
+	var setback=[];
+	var panoCell=new String();
+	var panoIdCell=[];
+	var panoHeading=[];
+	var I;
+	var geocoder,sv;
+	function initialize() {
+		sv = new google.maps.StreetViewService();
+		geocoder =new google.maps.Geocoder();
+		mapOptions = {
+		    position: cafe,
+			pov: {
+ 				heading: 0,
+				pitch: 0
+			},
+			visible: true
+		};
+		map = new google.maps.StreetViewPanorama(document.getElementById('map_canvas'), mapOptions);
+		google.maps.event.addListener(map, 'pano_changed', function() {
+			panoCell = map.getPano();
+			
+		});		
+		google.maps.event.addListener(map, 'links_changed', function() {
+			links =  map.getLinks();
+			
+			for (i=0;i<links.length;i=i+1) {
+			console.log(links[i].heading);
+				var headingCell=links[i].heading; //num set	
+				 
+				panoIdCell[i]=links[i].pano;
+				
+				panoHeading[i]=links[i].heading;
+				
+	        	headingCell=Math.abs(((map.pov.heading%360 - headingCell )<0)? (map.pov.heading%360 - headingCell )+360:(map.pov.heading%360 - headingCell ));
+				
+				if(headingCell>338||headingCell<=23){
+					selectroad[i]='1'; //前進
+					console.log("forward");
+					}
+				else if(headingCell>23 && headingCell<=68)
+					selectroad[i]='2'; //左轉1
+				else if(headingCell>68 && headingCell<=113)
+					selectroad[i]='3'; //左轉2
+				else if(headingCell>113 && headingCell<=158)
+					selectroad[i]='4'; //左轉3
+					
+				else if(headingCell>158 && headingCell<=203){
+					selectroad[i]='5'; //後退
+					setback[0]=panoIdCell[i];
+					setback[1]=panoHeading[i];
+				}
+					
+				else if(headingCell>203 && headingCell<=248)
+					selectroad[i]='6'; //右轉3					
+				else if(headingCell>248 && headingCell<=293)
+					selectroad[i]='7'; //右轉2					
+				else if(headingCell>293 && headingCell<=338)
+					selectroad[i]='8'; //右轉1				
+	      }
+	      map.setPov({heading:panoHeading[0],pitch:0});
+		map.setVisible(true);
+		console.log(panoHeading[0]);
+		});
+	}
+	
+	function setPano2link(num) {		
+		for(var i=0;i<links.length;i=i+1){
+			if(selectroad[i]==num){
+				I=i;		
+				break;
+			}
+		}		
+		map.setPov({heading:panoHeading[I],pitch:0});
+		map.setVisible(true);
+	}
+	function turnback(){
+		map.setPano(setback[0]);
+		map.setPov({heading:setback[1],pitch:0});
+		map.setVisible(true);
+	}
+	function forward(){
+		map.setPano(panoIdCell[I]);
+		map.setVisible(true);
+	}
+	function codeAddress(address){    		
+		geocoder.geocode({'address': address },function(results, status){      
+			if(status == google.maps.GeocoderStatus.OK){  			
+			    sv.getPanoramaByLocation(results[0].geometry.location, 50, function(data, Status) {			
+					if (Status == google.maps.StreetViewStatus.OK) {
+						map.setPosition(results[0].geometry.location); 
+						//console.log(results[0].geometry.links.heading);
+						//map.setPov({heading:results[0].geometry.links.heading,pitch:0});
+					}else{}
+				});				
+			}
+			else{}    
+		});  
+	}
+	</script>
+</head>
+<body onload="initialize()">
+	<!-- 修改height為100% --!>
+	<div id="map_canvas" style="width: device-width; height: 100%;"></div>
+	<!-- ************** --!>
+</body>
+</html>
+
